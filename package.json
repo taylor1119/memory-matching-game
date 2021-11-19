@@ -1,5 +1,5 @@
 {
-	"name": "react-express-ts-template",
+	"name": "memory-matching-game",
 	"private": "true",
 	"workspaces": [
 		"packages/*"
@@ -23,8 +23,8 @@
 		}
 	},
 	"scripts": {
-		"client": "yarn workspace @react-express-ts-template/client",
-		"server": "yarn workspace @react-express-ts-template/server",
+		"client": "yarn workspace @memory-matching-game/client",
+		"server": "yarn workspace @memory-matching-game/server",
 		"build": "yarn server build && yarn client build",
 		"start": "yarn server start",
 		"build-concurrent": "concurrently \"yarn server build\" \"yarn client build\" --names \"server,client\"",

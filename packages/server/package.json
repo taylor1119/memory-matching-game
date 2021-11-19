@@ -1,5 +1,5 @@
 {
-	"name": "@react-express-ts-template/server",
+	"name": "@memory-matching-game/server",
 	"version": "0.1.0",
 	"main": "dist/index.js",
 	"author": "Baatchia Riyadh",
