@@ -1,24 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
-import logo from './logo.svg';
+
+const cardImages = [
+	'/img/greek/ares.png',
+	'/img/greek/demeter.png',
+	'/img/greek/hephaestus.png',
+	'/img/greek/hermes.png',
+	'/img/greek/nike.png',
+	'/img/greek/pan.png',
+];
 
 function App() {
+	const [cards, setCards] = useState<string[]>([]);
+	const [turns, setTurns] = useState(0);
+
+	useEffect(() => {
+		const shuffledCards = [...cardImages, ...cardImages].sort(
+			() => Math.random() - 0.5
+		);
+
+		setCards(shuffledCards);
+		setTurns(0);
+	}, [setCards]);
+
 	return (
 		<div className='App'>
-			<header className='App-header'>
-				<img src={logo} className='App-logo' alt='logo' />
-				<p>
-					Edit <code>src/App.tsx</code> and save to reload.
-				</p>
-				<a
-					className='App-link'
-					href='https://reactjs.org'
-					target='_blank'
-					rel='noopener noreferrer'
-				>
-					Learn React
-				</a>
-			</header>
+			<h1>{turns}</h1>
+			<button onClick={() => setTurns(turns + 1)}>++</button>
+			<ul>
+				{cards.map((src, idx) => (
+					<li id={idx.toString()}>
+						<img src={src} alt='' />
+					</li>
+				))}
+			</ul>
 		</div>
 	);
 }
