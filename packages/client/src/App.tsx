@@ -2,14 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { v4 as uuid } from 'uuid';
 import './App.css';
 import Card from './components/Card';
+import './CyberpunkButton.css';
 
 const cardImages = [
-	'/img/greek/ares.png',
-	'/img/greek/demeter.png',
-	'/img/greek/hephaestus.png',
-	'/img/greek/hermes.png',
-	'/img/greek/nike.png',
-	'/img/greek/pan.png',
+	'/img/cyberpunk/TarotCard_01.webp',
+	'/img/cyberpunk/TarotCard_02.webp',
+	'/img/cyberpunk/TarotCard_03.webp',
+	'/img/cyberpunk/TarotCard_04.webp',
+	'/img/cyberpunk/TarotCard_05.webp',
+	'/img/cyberpunk/TarotCard_06.webp',
 ];
 
 export interface ICard {
@@ -72,8 +73,14 @@ function App() {
 	return (
 		<div className='App'>
 			<h1>Turns: {turns}</h1>
-			<button className='btn-reset' onClick={() => resetGame()}>
-				Reset Game
+			<button className='cyber-btn' onClick={() => resetGame()}>
+				New Game<span aria-hidden>_</span>
+				<span aria-hidden className='cyber-btn__glitch'>
+					New Game
+				</span>
+				<span aria-hidden className='cyber-btn__tag'>
+					R25
+				</span>
 			</button>
 			<div className='card-grid'>
 				{cards.map((card) => (

@@ -3,6 +3,11 @@
 html {
 	font-size: 20px;
 	font-family: 'Bebas Neue', cursive;
+	background-color: #c4be00;
+}
+
+html h1 {
+	margin: 0;
 }
 
 .App {
@@ -15,25 +20,28 @@ html {
 
 .card-grid {
 	display: grid;
-	grid-template-columns: 10rem 10rem 10rem 10rem;
-	grid-template-rows: 10rem 10rem 10rem;
+	grid-template-columns: 8rem 8rem 8rem 8rem 8rem 8rem;
+	grid-template-rows: 16rem 16rem;
 	column-gap: 2rem;
 	row-gap: 2rem;
 }
 
 .card {
 	position: relative;
+	cursor: pointer;
+}
+
+.card img {
+	width: 8rem;
+	height: 16rem;
 }
 
 .card-front {
-	width: 10rem;
-	height: 10rem;
 	display: block;
-	border: 3px solid black;
-	border-radius: 6px;
+	position: absolute;
+	background: gainsboro;
 	transform: rotateY(90deg);
 	transition: all ease-in 0.2s;
-	position: absolute;
 }
 
 .flipped .card-front {
@@ -42,63 +50,21 @@ html {
 }
 
 .card-back {
-	width: 10rem;
-	height: 10rem;
 	display: block;
-	border: 3px solid black;
-	border-radius: 6px;
+	position: absolute;
 	transition: all ease-in 0.2s;
 	transition-delay: 0.2s;
-	background-color: black;
 }
 .flipped .card-back {
 	transform: rotateY(90deg);
 	transition-delay: 0s;
-	background-color: black;
 }
 
-/* CSS */
-.btn-reset {
-	align-items: center;
-	background-clip: padding-box;
-	background-color: #fa6400;
-	border: 1px solid transparent;
-	border-radius: 0.25rem;
-	box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-	box-sizing: border-box;
-	color: #fff;
-	cursor: pointer;
-	display: inline-flex;
-	font-size: 16px;
-	font-weight: 600;
-	justify-content: center;
-	line-height: 1.25;
-	margin: 0;
-	min-height: 3rem;
-	padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
-	position: relative;
-	text-decoration: none;
-	transition: all 250ms;
-	user-select: none;
-	-webkit-user-select: none;
-	touch-action: manipulation;
-	vertical-align: baseline;
-	width: auto;
-	margin-bottom: 2rem;
-}
-
-.btn-reset:hover,
-.btn-reset:focus {
-	background-color: #fb8332;
-	box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-}
-
-.btn-reset:hover {
-	transform: translateY(-1px);
-}
-
-.btn-reset:active {
-	background-color: #c85000;
-	box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
-	transform: translateY(0);
+.card-back:before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	border-bottom: 1.5rem solid #c4be00;
+	border-right: 1.5rem solid rgba(0, 0, 0, 0);
 }

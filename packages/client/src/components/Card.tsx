@@ -11,7 +11,10 @@ const Card = ({ imgSrc, handleChoice, isFlipped }: IProps) => {
 		<div className='card'>
 			<div className={isFlipped ? 'flipped' : ''}>
 				<img className='card-front' src={imgSrc} alt='front' />
-				<div className='card-back' onClick={handleChoice} />
+
+				<div className='card-back' onClick={handleChoice}>
+					<img src='./img/cyberpunk/back.jpg' alt='back' />
+				</div>
 			</div>
 		</div>
 	);
