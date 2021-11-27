@@ -76,6 +76,16 @@ function App() {
 		setLoadedImgCount((prevState) => prevState + 1);
 	};
 
+	const [showLoading, setShowLoading] = useState(false);
+
+	useEffect(() => {
+		if (loadedImgCount !== cards.length * 2)
+			setTimeout(() => {
+				setShowLoading(true);
+			}, 500);
+		else setShowLoading(false);
+	}, [cards.length, loadedImgCount]);
+
 	const isLoading = loadedImgCount !== cards.length * 2;
 	return (
 		<div className='App'>
@@ -89,7 +99,7 @@ function App() {
 					R25
 				</span>
 			</button>
-			<div className={isLoading ? '' : 'invisible'}>
+			<div className={showLoading && isLoading ? '' : 'invisible'}>
 				<h1>loading...</h1>
 			</div>
 			<div className={!isLoading ? 'card-grid' : 'invisible'}>
