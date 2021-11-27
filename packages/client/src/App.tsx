@@ -60,7 +60,6 @@ function App() {
 						card.src === choiceOne.src ? { ...card, isMatched: true } : card
 					)
 				);
-				console.log('Match!!!!');
 			}
 
 			setTimeout(() => {
