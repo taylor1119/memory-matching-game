@@ -46,6 +46,7 @@ function App() {
 		setCards(shuffledCards);
 		setTurns(0);
 		setLoadedImgCount(0);
+		setShowLoading(false);
 	};
 
 	useEffect(() => {
