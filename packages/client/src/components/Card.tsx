@@ -5,10 +5,16 @@ const backSrc = './img/cyberpunk/back.jpg';
 interface IProps {
 	imgSrc: string;
 	handleChoice: () => void;
+	incrementLoadedCount: () => void;
 	isFlipped: boolean;
 }
 
-const Card = ({ imgSrc, handleChoice, isFlipped }: IProps) => {
+const Card = ({
+	imgSrc,
+	handleChoice,
+	isFlipped,
+	incrementLoadedCount,
+}: IProps) => {
 	return (
 		<div className='card'>
 			<div className={isFlipped ? 'flipped' : ''}>
@@ -16,6 +22,7 @@ const Card = ({ imgSrc, handleChoice, isFlipped }: IProps) => {
 					<img
 						className='card-front card-glitch-item'
 						src={imgSrc}
+						onLoad={incrementLoadedCount}
 						alt='front'
 					/>
 					<img
@@ -25,7 +32,12 @@ const Card = ({ imgSrc, handleChoice, isFlipped }: IProps) => {
 					/>
 				</div>
 				<div className='card-glitch card-back' onClick={handleChoice}>
-					<img className='card-glitch-item' src={backSrc} alt='back' />
+					<img
+						className='card-glitch-item'
+						src={backSrc}
+						alt='back'
+						onLoad={incrementLoadedCount}
+					/>
 					<img className='card-glitch-item' src={backSrc} alt='back' />
 				</div>
 			</div>

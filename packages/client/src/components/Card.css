@@ -3,6 +3,10 @@
 	cursor: pointer;
 }
 
+.invisible {
+	display: none;
+}
+
 .card-front {
 	background: gainsboro;
 	transform: rotateY(90deg);

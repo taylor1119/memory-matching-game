@@ -70,6 +70,13 @@ function App() {
 		}
 	}, [choiceOne, choiceTwo]);
 
+	const [loadedImgCount, setLoadedImgCount] = useState(0);
+
+	const incrementLoadedCount = () => {
+		setLoadedImgCount((prevState) => prevState + 1);
+	};
+
+	const isLoading = loadedImgCount !== cards.length * 2;
 	return (
 		<div className='App'>
 			<h1>Turns: {turns}</h1>
@@ -82,12 +89,16 @@ function App() {
 					R25
 				</span>
 			</button>
-			<div className='card-grid'>
+			<div className={isLoading ? '' : 'invisible'}>
+				<h1>loading...</h1>
+			</div>
+			<div className={!isLoading ? 'card-grid' : 'invisible'}>
 				{cards.map((card) => (
 					<Card
 						handleChoice={handleChoice(card)}
 						imgSrc={card.src}
 						key={card.id}
+						incrementLoadedCount={incrementLoadedCount}
 						isFlipped={
 							card.isMatched ||
 							card.id === choiceOne?.id ||
