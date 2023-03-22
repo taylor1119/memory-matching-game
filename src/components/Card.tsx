@@ -1,4 +1,3 @@
-import React from 'react';
 import './Card.css';
 
 const backSrc = './img/cyberpunk/back.jpg';

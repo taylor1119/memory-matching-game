@@ -1,6 +1,13 @@
 .card {
 	position: relative;
 	cursor: pointer;
+	height: calc((100vh - 113px) / 2 - 1.5rem);
+	aspect-ratio: 0.5;
+}
+
+img {
+	height: calc((100vh - 113px) / 2 - 1.5rem);
+	aspect-ratio: 0.5;
 }
 
 .invisible {
@@ -34,8 +41,6 @@
 
 .card-glitch-item {
 	position: absolute;
-	max-height: 16rem;
-	max-width: 8rem;
 }
 
 .card-glitch:hover .card-glitch-item:nth-child(2) {

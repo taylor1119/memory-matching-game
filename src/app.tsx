@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import { v4 as uuid } from 'uuid';
-import './App.css';
+import { useEffect, useState } from 'preact/hooks';
 import Card from './components/Card';
+
+import './app.css';
 import './CyberpunkButton.css';
 
 const cardImages = [
-	'/img/cyberpunk/TarotCard_01.webp',
-	'/img/cyberpunk/TarotCard_02.webp',
-	'/img/cyberpunk/TarotCard_03.webp',
-	'/img/cyberpunk/TarotCard_04.webp',
-	'/img/cyberpunk/TarotCard_05.webp',
-	'/img/cyberpunk/TarotCard_06.webp',
+	'./img/cyberpunk/TarotCard_01.webp',
+	'./img/cyberpunk/TarotCard_02.webp',
+	'./img/cyberpunk/TarotCard_03.webp',
+	'./img/cyberpunk/TarotCard_04.webp',
+	'./img/cyberpunk/TarotCard_05.webp',
+	'./img/cyberpunk/TarotCard_06.webp',
 ];
 
 export interface ICard {
@@ -18,7 +18,7 @@ export interface ICard {
 	id: string;
 	isMatched: boolean;
 }
-function App() {
+export default function App() {
 	const [cards, setCards] = useState<ICard[]>([]);
 	const [turns, setTurns] = useState(0);
 
@@ -38,7 +38,7 @@ function App() {
 			.map((src): ICard => {
 				return {
 					src,
-					id: uuid(),
+					id: crypto.randomUUID(),
 					isMatched: false,
 				};
 			});
@@ -121,5 +121,3 @@ function App() {
 		</div>
 	);
 }
-
-export default App;
