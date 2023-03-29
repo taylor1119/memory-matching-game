@@ -1,5 +1,5 @@
 {
 	"$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/packages/cspell-types/cspell.schema.json",
-	"words": ["Preact", "webp"],
-	"ignorePaths": ["pnpm-lock.yaml"]
+	"words": ["Preact", "webp", "vite"],
+	"ignorePaths": ["pnpm-lock.yaml", "dist"]
 }
